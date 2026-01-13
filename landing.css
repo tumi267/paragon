@@ -1,0 +1,211 @@
+body{
+    padding: 0%;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: black;
+    color: #4B4949;
+    position: relative;
+}
+.main-content{
+    position: sticky;
+}
+.nav{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    height: 115px;
+    align-items: center;
+    padding: 0 1em;
+    border: #4B4949 1px solid;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  /* animation: hideNav linear forwards; */
+  /* animation-timeline: scroll(); */
+  /* animation-range: 0 200px; */
+}
+a{
+    text-decoration: none;
+    color: #4B4949;
+    cursor: pointer;
+}
+.text_wrapper{
+    position: relative;
+    /* z-index: 10; */
+    background-color: aliceblue;
+}
+.text_content{
+    max-width: 1200px;
+    width: 80%;
+    padding: 1em;
+    font-size: 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.filler{
+    height: 150vh;
+}
+#logo{
+    height: 110px;
+    width: 110px;
+}
+.links{
+    display: flex;
+    justify-content: space-between;
+}
+ul{
+    list-style: none;
+}
+
+.paralex{
+    /* position: relative; */
+    min-height: 75vh;
+    display: grid;
+    grid-template-areas: "stack";
+    max-width: 100%;
+
+}
+.paralex >*{
+    grid-area: stack;
+    animation: paralex linear;
+    animation-timeline: scroll();
+}
+.paralex > img {
+    width: 100%;
+  }
+  .parallax__bg {
+    --parallax-speed: -10;
+  
+    z-index: 1;
+    min-height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .parallax__dust {
+    --parallax-speed: -20;
+    z-index: 2;
+  }
+  
+  .parallax__luna {
+    --parallax-speed: 20;
+    --parallax-direction:-10;
+    --depth:7;
+    z-index: 3;
+  }
+  
+  .parallax__manny {
+    --parallax-speed: 10;
+    --parallax-direction:5;
+    --depth:10;
+    z-index: 4;
+  }
+  
+  .parallax__jax {
+    --parallax-speed: 20;
+    --depth:6;
+    --parallax-direction:10;
+    z-index: 5;
+  }
+  
+  .parallax__rays {
+    --parallax-speed: 10;
+    z-index: 3;
+    --parallax-direction:-10;
+  }
+  
+  .parallax__foreground-front,
+  .parallax__foreground-back {
+    z-index: 999;
+    align-self: end;
+    --parallax-direction:20;
+    --parallax-speed:130;
+    --depth:1;
+  }
+  
+  .parallax__foreground-back {
+    transform: scaleY(1.5);
+    transform-origin: bottom;
+    mix-blend-mode: hard-light;
+  }
+  
+  .hero__title {
+    position: absolute;
+    top: 400px;
+    left:150px;
+    font-size: 6rem;
+    max-width: 10ch;
+    line-height: 1;
+    font-style: italic;
+    font-weight: 900;
+    position: relative;
+    color: antiquewhite;
+    z-index: 20;
+}
+.wrapper {
+    position: relative; /* parent for text layers */
+    width: 100%;
+  }
+  .image_left,
+  .image_right,
+  .image_center {
+    height: 200px;
+    width: 200px;
+    opacity: 0;
+}
+.blank-image{
+    height: 50vh;
+}
+  .background-video {
+    position: sticky; /* video sticks while scrolling inside wrapper */
+    top: 0;           /* stick to top of viewport */
+    width: 100%;
+    height: 100vh;    /* full viewport height */
+    object-fit: cover;
+    z-index: -1;       /* behind text */
+  }
+  
+@keyframes paralex {
+    to{
+        transform: translateY(calc(var(--parallax-speed)*200px))
+        translateX(calc(var(--parallax-direction, 0) * 200px))
+        scale(calc(1 + var(--depth, 0) * 0.2))
+    }
+}
+@keyframes hideNav {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+
+  .image_left,
+  .image_right,
+  .image_center {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+  }
+  
+  .image_left.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .image_right.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .image_center.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .image_left{margin-left: 5em;}
+  .image_right{margin-left: 35em;
+                margin-right: 45em}
+  .image_center{margin-left: 60em;}
