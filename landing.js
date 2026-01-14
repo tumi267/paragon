@@ -2,7 +2,7 @@ const images = document.querySelectorAll('.image_left, .image_right, .image_cent
 
 const observerOptions = {
   root: null,          // viewport
-  threshold: 0.35,      // trigger when 10% of image is visible
+  threshold: 0.1,      // trigger when 10% of image is visible
 };
 
 const observer = new IntersectionObserver((entries) => {
