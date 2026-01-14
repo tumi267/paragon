@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body{
     padding: 0%;
     margin: 0;
@@ -217,7 +221,7 @@ ul{
     padding: 6rem 1rem;
     display: flex;
     justify-content: center;
-    background-color: antiquewhite;
+    background-color: aliceblue;
     
   }
   .input_form{
@@ -253,12 +257,12 @@ ul{
   .contact-form input:focus,
   .contact-form textarea:focus {
     outline: none;
-    border-color: antiquewhite;
+    background-color: aliceblue;
   }
   
   .contact-form button {
     margin-top: 1rem;
-    background: antiquewhite;
+    background: aliceblue;
     color: black;
     border: none;
     padding: 0.75rem;
@@ -269,4 +273,37 @@ ul{
   .contact-form button:hover {
     transform: translateY(-2px);
     opacity: 0.9;
+  }
+
+  .clients-track img {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+  }
+  .clients-track img.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .clients-wrapper{
+    overflow: hidden; /* hides the logos that move outside the viewport */
+    width: 100%;
+    padding: 2rem 2rem;
+  }
+  .clientImage{
+    height: 250px;
+    width: 250px;
+  }
+  .clients-track {
+    display: inline-flex;
+    gap: 5em; /* your spacing is fine */
+    white-space: nowrap;
+    animation: scrollClients 20s linear infinite;
+  }
+  .clients-track img:hover {
+    filter: none;
+    opacity: 1;
+  }
+  @keyframes scrollClients {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* adjust if repeating logos */
   }

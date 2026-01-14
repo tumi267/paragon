@@ -17,3 +17,30 @@ const observer = new IntersectionObserver((entries) => {
 
 images.forEach(img => observer.observe(img));
 
+const clientLogos = document.querySelectorAll('.clients-track img');
+const observerOptions2 = { threshold: 0.1 };
+const observer2 = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+clientLogos.forEach(img => observer.observe(img));
+
+const track = document.querySelector('.clients-track');
+
+// Clone all children and append them dynamically
+const logos = Array.from(track.children);
+logos.forEach(logo => {
+  const clone = logo.cloneNode(true);
+  track.appendChild(clone);
+})
+document.querySelectorAll('.nav a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
