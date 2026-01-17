@@ -71,11 +71,11 @@
             <img src='https://paragonview.co.za/wp-content/uploads/2024/05/paragonview-logo-1.svg' alt='logo'/>
             </div>
                 <div class="blank-image">&nbsp;</div>
-                <img class="image_left"src="public/assets/jason-rosewell-ASKeuOZqhYU-unsplash.jpg"/>
+                <img loading="lazy" class="image_left"src="public/assets/jason-rosewell-ASKeuOZqhYU-unsplash.jpg"/>
                 <div class="blank-image">&nbsp;</div>
-                <img class="image_right"src="public/assets/denisse-leon-OVEWbIgffDk-unsplash.jpg"/>
+                <img loading="lazy" class="image_right"src="public/assets/denisse-leon-OVEWbIgffDk-unsplash.jpg"/>
                 <div class="blank-image">&nbsp;</div>
-                <img class="image_center"src="public/assets/spenser-sembrat-WlRDNUJ06fc-unsplash.jpg"/>
+                <img loading="lazy" class="image_center"src="public/assets/spenser-sembrat-WlRDNUJ06fc-unsplash.jpg"/>
                 <div class="blank-image">&nbsp;</div>
             <div class="text_wrapper" id="about">
                     <h2>About us</h2>
@@ -84,7 +84,7 @@
                     <p class="text_content">Our passion lies in creating your music that is culturally relevant and functional for your campaign needs.
                     </p>
                     <div class="blank-image">&nbsp;</div>
-                    <img src='https://paragonview.co.za/wp-content/uploads/2024/05/paragonview-logo-1.svg' alt='logo'/>
+                    <img loading="lazy" src='https://paragonview.co.za/wp-content/uploads/2024/05/paragonview-logo-1.svg' alt='logo'/>
             </div>
             <div class="blank-image">&nbsp;</div>
             <div class="blank-image">&nbsp;</div>
@@ -100,10 +100,10 @@
         <div class="blank-image">&nbsp;</div>
         <div class="clients-wrapper" id="clients">
             <div class="clients-track">
-              <img class="clientImage visible" src="public/assets/coca-cola-logo.svg" alt="Client 1"/>
-              <img class="clientImage visible" src="public/assets/fnb-first-national-bank2505.jpeg" alt="Client 2"/>
-              <img class="clientImage visible" src="public/assets/Gauteng-Provincial-Government-Logo-300x200.jpeg" alt="Client 3"/>
-              <img class="clientImage visible" src="public/assets/sanral.webp" alt="Client 4"/>
+              <img class="clientImage visible" loading="lazy" src="public/assets/coca-cola-logo.svg" alt="Client 1"/>
+              <img class="clientImage visible" loading="lazy" src="public/assets/fnb-first-national-bank2505.jpeg" alt="Client 2"/>
+              <img class="clientImage visible" loading="lazy" src="public/assets/Gauteng-Provincial-Government-Logo-300x200.jpeg" alt="Client 3"/>
+              <img class="clientImage visible" loading="lazy" src="public/assets/sanral.webp" alt="Client 4"/>
             </div>
           </div>
           <div class="blank-image">&nbsp;</div>
@@ -120,6 +120,7 @@
                   placeholder="Email"
                   required
                 />
+                <span class="error-message" aria-live="polite"></span>
               </label>
           
               <label>
@@ -131,9 +132,10 @@
                   rows="4"
                   required
                 ></textarea>
+                <span class="error-message" aria-live="polite"></span>
               </label>
           
-              <button type="submit">Submit</button>
+              <button type="submit" id="submit">Submit</button>
             </form>
           </div>
           <div class="blank-image">&nbsp;</div>
@@ -142,3 +144,10 @@
     <script src="landing.js"></script>
 </body>
 </html>
+
+
+<!-- 
+Mobile responsiveness – clients will expect it to look just as polished on phones and tablets. You’ll need media queries, maybe adjustments to parallax speeds, image scaling, nav size, and the clients track.
+
+Cross-browser testing – Safari, Chrome, and mobile browsers can behave differently with parallax and scroll-tied animations. 
+-->

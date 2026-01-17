@@ -23,9 +23,20 @@ body{
     position: sticky;
     top: 0;
     z-index: 999;
+    background-color: black;
+    transition: transform 0.3s ease, opacity 0.3s ease;
   /* animation: hideNav linear forwards; */
   /* animation-timeline: scroll(); */
   /* animation-range: 0 200px; */
+}
+.nav a:hover {
+  color: #f0f0f0; /* accent color */
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+.nav.nav--hidden {
+  transform: translateY(-100%);
+  opacity: 0;
 }
 a{
     text-decoration: none;
@@ -299,6 +310,11 @@ ul{
     white-space: nowrap;
     animation: scrollClients 20s linear infinite;
   }
+  .clientImage:hover {
+    height: 260px;
+    width: 260px;
+    transition: transform 0.3s ease;
+}
   .clients-track img:hover {
     filter: none;
     opacity: 1;
@@ -307,3 +323,83 @@ ul{
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); } /* adjust if repeating logos */
   }
+  .error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+    display: block;
+    min-height: 1.2em; /* keeps space reserved even if empty */
+  }
+  .success-message {
+    display: block;
+    color: green;
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+/* Mobile Styles (Screens smaller than 768px) */
+@media screen and (max-width: 768px) {
+  .filler{
+    height: 50vh;
+  }
+  /* 1. Navigation: Change grid to be more compact */
+  .nav {
+    grid-template-columns: 1fr 1fr; /* Drop the middle column or space out */
+    height: 80px;
+  }
+  #logo {
+    height: 60px;
+    width: 60px;
+  }
+  .links {
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  /* 2. Hero Title: Fix the fixed positioning */
+  .hero__title {
+    top: 20%; 
+    left: 5%;
+    font-size: 3rem; /* Smaller text for mobile */
+    max-width: 100%;
+  }
+
+  /* 3. Parallax: Reduce intensity for mobile performance */
+  .paralex {
+    min-height: 50vh;
+  }
+  @keyframes paralex {
+    to {
+        transform: translateY(calc(var(--parallax-speed) * 50px)) 
+                   translateX(calc(var(--parallax-direction, 0) * 50px));
+    }
+  }
+
+  /* 4. Images: Remove the huge 'em' margins that push images off-screen */
+  .image_left, .image_right, .image_center {
+    margin: 2em auto; /* Center them vertically with space between */
+    display: block;
+    width: 150px;
+    height: 150px;
+  }
+
+  /* 5. Text Content: Ensure text isn't too large */
+  .text_content {
+    width: 90%;
+    font-size: 18px;
+  }
+
+  /* 6. Contact Form: Make it full width */
+  .input_form {
+    width: 100%;
+  }
+  .contact-form {
+    padding: 0 20px;
+  }
+
+  /* 7. Client Logos: Shrink them for mobile */
+  .clientImage {
+    height: 120px;
+    width: 120px;
+  }
+}
